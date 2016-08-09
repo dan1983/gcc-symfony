@@ -1,0 +1,13 @@
+{% extends "CoreBundle::layout.html.twig" %}
+{% block title %}
+    {{ paragraph | trans}}
+{% endblock %}
+{% block section %}
+  <div id="main-body" class="main-body clearfix">
+      <div class="masonry container">
+          {%  for post in posts %}
+            {{ include ('CoreBundle:Post:_post.html.twig',{ post : post , img : post.img }) }}
+          {% endfor %}
+      </div>
+  </div>
+{% endblock %}

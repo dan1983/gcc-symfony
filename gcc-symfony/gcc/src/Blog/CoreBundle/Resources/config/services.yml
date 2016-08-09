@@ -1,0 +1,12 @@
+parameters:
+    post_manager.class: Blog\CoreBundle\Services\PostManager
+    img_manager.class: Blog\CoreBundle\Services\ImgManager
+services:
+    post_manager:
+        class: Blog\CoreBundle\Services\PostManager
+        arguments:
+            ["@doctrine.orm.entity_manager"]
+    img_manager:
+        class: %img_manager.class%
+        arguments:
+            ["@doctrine.orm.entity_manager"]
